@@ -9,13 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --beige-dark: #1a1410;
-            --beige-medium: #3d3430;
-            --beige-light: #8b7d6b;
-            --gold: #d4af8a;
-            --gold-light: #e2c47a;
-            --cream: #f5ead6;
-            --white: #ffffff;
+            --creme: #EEE4DA;
+            --sand: #DBC4AC;
+            --dusty-pink: #CBA49F;
+            --burgundy: #4D0E13;
+            --cream-light: #F9F6F2;
             --font-serif: 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Montserrat', sans-serif;
             --font-script: 'Tangerine', cursive;
@@ -30,8 +28,8 @@
         html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--beige-dark);
-            color: var(--cream);
+            background-color: var(--creme);
+            color: var(--burgundy);
             font-family: var(--font-sans);
             overflow-x: hidden;
         }
@@ -40,7 +38,7 @@
         #intro-overlay {
             position: fixed;
             inset: 0;
-            background: var(--beige-dark);
+            background: var(--creme);
             z-index: 1000;
             display: flex;
             flex-direction: column;
@@ -60,8 +58,8 @@
             position: relative;
             width: min(85vw, 650px);
             height: min(55vw, 420px);
-            background: linear-gradient(135deg, #2c2420 0%, #1a1410 100%);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 100px rgba(212,175,138,0.15);
+            background: linear-gradient(135deg, #DBC4AC 0%, #CBA49F 100%);
+            box-shadow: 0 40px 80px rgba(77, 14, 19, 0.15), 0 0 100px rgba(201, 164, 159, 0.2);
             animation: floatEnvelope 6s ease-in-out infinite;
         }
 
@@ -78,9 +76,9 @@
         .envelope-interior {
             position: absolute;
             inset: 15px 25px;
-            background: var(--cream);
-            border: 2px solid var(--gold);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            background: var(--cream-light);
+            border: 2px solid var(--sand);
+            box-shadow: 0 5px 15px rgba(77, 14, 19, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,13 +91,13 @@
         .envelope.open-flap .envelope-interior {
             opacity: 1;
             transform: translateY(-80px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 50px rgba(77, 14, 19, 0.15);
         }
 
         .envelope-interior-text {
             font-family: var(--font-script);
             font-size: clamp(36px, 7vw, 48px);
-            color: var(--gold);
+            color: var(--burgundy);
         }
 
         .wax-seal {
@@ -109,11 +107,11 @@
             transform: translate(-50%, -50%);
             width: 85px;
             height: 85px;
-            background: radial-gradient(circle at 30% 30%, var(--gold-light), var(--gold) 60%, #7a631e);
+            background: radial-gradient(circle at 30% 30%, #DBC4AC, var(--dusty-pink) 60%, #8B6B5F);
             border-radius: 50%;
             cursor: pointer;
             z-index: 5;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 3px 8px rgba(255,255,255,0.4);
+            box-shadow: 0 10px 20px rgba(77, 14, 19, 0.2), inset 0 3px 8px rgba(255,255,255,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -123,7 +121,7 @@
 
         .wax-seal:hover {
             transform: translate(-50%, -50%) scale(1.1);
-            filter: brightness(1.15);
+            filter: brightness(0.95);
         }
 
         .wax-seal.cracked {
@@ -140,7 +138,7 @@
             font-size: 10px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--gold-light);
+            color: var(--burgundy);
             animation: pulseInstruction 2s ease-in-out infinite alternate;
         }
 
@@ -185,7 +183,7 @@
 
         .hero-bismillah {
             font-size: 24px;
-            color: var(--gold-light);
+            color: var(--burgundy);
             margin-bottom: 20px;
         }
 
@@ -194,13 +192,13 @@
             font-size: 10px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--gold-light);
+            color: var(--dusty-pink);
         }
 
         .hero-names {
             font-family: var(--font-script);
             font-size: clamp(42px, 9vw, 76px);
-            color: var(--gold-light);
+            color: var(--burgundy);
             line-height: 1.1;
             margin: 20px 0;
         }
@@ -210,15 +208,15 @@
             font-size: 12px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--cream);
-            opacity: 0.7;
+            color: var(--burgundy);
+            opacity: 0.8;
             margin: 15px 0;
         }
 
         .hero-ampersand {
             font-family: var(--font-script);
             font-size: 48px;
-            color: var(--gold);
+            color: var(--dusty-pink);
             margin: 16px 0;
         }
 
@@ -233,23 +231,24 @@
         .ornament-line {
             height: 1px;
             width: 60px;
-            background: linear-gradient(to right, transparent, var(--gold));
+            background: linear-gradient(to right, transparent, var(--sand));
         }
 
         .ornament-line.reverse {
-            background: linear-gradient(to left, transparent, var(--gold));
+            background: linear-gradient(to left, transparent, var(--sand));
         }
 
         .ornament-diamond {
             width: 6px;
             height: 6px;
-            background: var(--gold);
+            background: var(--sand);
             transform: rotate(45deg);
         }
 
         /* EVENTS SECTION */
         #events-section {
             padding: 80px 24px;
+            background: linear-gradient(180deg, transparent 0%, rgba(219, 196, 172, 0.1) 50%, transparent 100%);
         }
 
         .section-header {
@@ -261,7 +260,7 @@
             font-family: var(--font-serif);
             font-size: clamp(32px, 7vw, 52px);
             font-weight: 300;
-            color: var(--cream);
+            color: var(--burgundy);
         }
 
         .events-grid {
@@ -273,8 +272,8 @@
         }
 
         .event-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(212,175,138,0.2);
+            background: linear-gradient(135deg, rgba(239, 234, 230, 0.8) 0%, rgba(219, 196, 172, 0.4) 100%);
+            border: 1px solid var(--sand);
             padding: 44px 36px;
             text-align: center;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -282,7 +281,8 @@
 
         .event-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 60px rgba(77, 14, 19, 0.1);
+            border-color: var(--dusty-pink);
         }
 
         .event-icon {
@@ -293,14 +293,14 @@
         .event-name {
             font-family: var(--font-script);
             font-size: 32px;
-            color: var(--gold-light);
+            color: var(--burgundy);
             margin-bottom: 12px;
         }
 
         .event-divider {
             width: 40px;
             height: 1px;
-            background: var(--gold);
+            background: var(--sand);
             margin: 20px auto;
         }
 
@@ -312,11 +312,11 @@
             margin-bottom: 16px;
             font-family: var(--font-serif);
             font-size: 15px;
-            color: var(--cream);
+            color: var(--burgundy);
         }
 
         .event-detail-icon {
-            color: var(--gold);
+            color: var(--dusty-pink);
             font-size: 13px;
             min-width: 16px;
         }
@@ -327,7 +327,7 @@
             font-size: 9px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--dusty-pink);
             margin-bottom: 4px;
         }
 
@@ -349,8 +349,8 @@
         }
 
         .location-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(212,175,138,0.2);
+            background: rgba(219, 196, 172, 0.2);
+            border: 1px solid var(--sand);
             padding: 36px 28px;
             text-align: center;
             transition: transform 0.3s ease;
@@ -358,6 +358,7 @@
 
         .location-card:hover {
             transform: translateY(-4px);
+            border-color: var(--dusty-pink);
         }
 
         .location-card-icon {
@@ -368,7 +369,7 @@
         .location-details {
             font-family: var(--font-serif);
             font-size: 14px;
-            color: var(--cream);
+            color: var(--burgundy);
             line-height: 1.6;
         }
 
@@ -384,7 +385,7 @@
             font-family: serif;
             font-size: 22px;
             line-height: 2;
-            color: var(--gold-light);
+            color: var(--burgundy);
             direction: rtl;
             margin-bottom: 20px;
         }
@@ -393,21 +394,22 @@
             font-family: var(--font-serif);
             font-style: italic;
             font-size: 15px;
-            color: var(--cream);
+            color: var(--burgundy);
             line-height: 1.8;
+            opacity: 0.85;
         }
 
         /* FOOTER */
         #footer {
             padding: 60px 24px 40px;
             text-align: center;
-            border-top: 1px solid rgba(212,175,138,0.15);
+            border-top: 1px solid var(--sand);
         }
 
         .footer-names {
             font-family: var(--font-script);
             font-size: 42px;
-            color: var(--gold-light);
+            color: var(--burgundy);
             margin-bottom: 12px;
         }
 
@@ -415,8 +417,8 @@
             font-family: var(--font-serif);
             font-style: italic;
             font-size: 13px;
-            color: var(--cream);
-            opacity: 0.6;
+            color: var(--burgundy);
+            opacity: 0.7;
         }
 
         @media (max-width: 768px) {
@@ -455,12 +457,12 @@
                 <p class="hero-eyebrow">request the honour of your presence with family on the auspicious occasion of the marriage of our son</p>
 
                 <p class="hero-names">Izhaq</p>
-                <p style="font-size: 12px; color: var(--gold); margin-bottom: 20px;">(Grand S/o Late Pockandagath Hamza)</p>
+                <p style="font-size: 12px; color: var(--dusty-pink); margin-bottom: 20px;">(Grand S/o Late Pockandagath Hamza)</p>
 
                 <p class="hero-ampersand">&</p>
 
                 <p class="hero-names">Naeema</p>
-                <p style="font-size: 11px; color: rgba(212,175,138,0.8); line-height: 1.6; margin-bottom: 20px;">
+                <p style="font-size: 11px; color: rgba(77, 14, 19, 0.7); line-height: 1.6; margin-bottom: 20px;">
                     (D/o Mr. Mohammed Noufal Kaidal Thayyil<br>
                     Mrs. Razeena Noufal Korachankandy)<br>
                     (Grand D/o Late A D Mahmood)<br>
